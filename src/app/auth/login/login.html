@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+          <meta charset="utf-8" />
+          <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+          <title>Developer Login | Go Auth Platform</title>
+          <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+                    rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                    rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                    rel="stylesheet" />
+          <script id="tailwind-config">
+                    tailwind.config = {
+                              darkMode: "class",
+                              theme: {
+                                        extend: {
+                                                  colors: {
+                                                            "primary": "#00abd6", // Go Blue
+                                                            "background-light": "#f5f8f8",
+                                                            "background-dark": "#0f1f23",
+                                                  },
+                                                  fontFamily: {
+                                                            "display": ["Inter", "sans-serif"]
+                                                  },
+                                                  borderRadius: {
+                                                            "DEFAULT": "0.25rem",
+                                                            "lg": "0.5rem",
+                                                            "xl": "0.75rem",
+                                                            "full": "9999px"
+                                                  },
+                                        },
+                              },
+                    }
+          </script>
+          <style>
+                    body {
+                              font-family: 'Inter', sans-serif;
+                    }
+
+                    .go-gradient {
+                              background: linear-gradient(135deg, #00abd6 0%, #007d9c 100%);
+                    }
+          </style>
+</head>
+
+<body
+          class="bg-background-light dark:bg-background-dark font-display min-h-screen flex items-center justify-center p-0 m-0">
+          <div class="flex min-h-screen w-full overflow-hidden bg-background-light dark:bg-background-dark">
+                    <div class="hidden lg:flex lg:w-1/2 go-gradient relative items-center justify-center p-12">
+                              <div class="absolute inset-0 opacity-10"
+                                        data-alt="Subtle geometric cube pattern for developer aesthetic"
+                                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBV0UbimSLaKIqgZwmfIET0WNwfxRO_R9NO_FxYtRceVdN0SfZcILWx4JcFglyBwFyTBaQEj9MFzlYuMeMZdlOXl6F7AFhQNP1paMIvFsAVAt3jxuACZl7yWavEnVYtVn1TfYdV9pL8DgA09afH8FBaHLrcvW4e1tAbkpG1U52My5Xfmo5Gy8cVJb3AtWyDakhsaMt82EjuW70Z1DkpattLTzTvIBeJdeEJJ2Yx0m2kfeifkIUdJFg6Q-786BWrOanq8ekHvUCmtDaW');">
+                              </div>
+                              <div class="relative z-10 text-white max-w-md text-center">
+                                        <div class="mb-8 flex justify-center">
+                                                  <div
+                                                            class="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                                            <img src="/img/logo.png" alt="Logo Go Platform">
+                                                  </div>
+                                        </div>
+                                        <h1 class="text-4xl font-bold mb-4">GoPlatform</h1>
+                                        
+                                          
+                              </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 md:p-20">
+                              <div class="w-full max-w-[440px] flex flex-col">
+                                        <div class="lg:hidden mb-8 flex items-center gap-2">
+                                                  <div
+                                                            class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                                                            
+                                                                      <img src="/img/logo.png" alt="Logo Go Platform">
+                                                  </div>
+                                                  <span
+                                                            class="text-2xl font-bold text-slate-900 dark:text-slate-100">GoPlatform</span>
+                                        </div>
+                                        <div class="mb-10">
+                                                  <h2
+                                                            class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+                                                            Welcome back</h2>
+                                                  
+                                        </div>
+                                        <form class="space-y-5">
+                                                  <div class="flex flex-col gap-2">
+                                                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                                                      for="email">Email Address</label>
+                                                            <input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                                                                      id="email" placeholder="name@company.com"
+                                                                      type="email" />
+                                                  </div>
+                                                  <div class="flex flex-col gap-2">
+                                                            <div class="flex justify-between items-center">
+                                                                      <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                                                                                for="password">Password</label>
+                                                                      <a class="text-sm font-medium text-primary hover:underline"
+                                                                                href="#">Forgot password?</a>
+                                                            </div>
+                                                            <div class="relative">
+                                                                      <input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                                                                                id="password" placeholder="••••••••"
+                                                                                type="password" />
+                                                                      <button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                                                                                type="button">
+                                                                                <span
+                                                                                          class="material-symbols-outlined text-[20px]">visibility</span>
+                                                                      </button>
+                                                            </div>
+                                                  </div>
+                                                  <div class="flex items-center">
+                                                            <input class="h-4 w-4 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary bg-transparent"
+                                                                      id="remember" type="checkbox" />
+                                                            <label class="ml-2 text-sm text-slate-600 dark:text-slate-400"
+                                                                      for="remember">Remember this device</label>
+                                                  </div>
+                                                  <button class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-4 rounded-lg transition-colors shadow-lg shadow-primary/20"
+                                                            type="submit">
+                                                            Sign In
+                                                  </button>
+                                        </form>
+                                        <p class="mt-10 text-center text-sm text-slate-600 dark:text-slate-400">
+                                                  Don't have an account?
+                                                  <a class="font-semibold text-primary hover:underline" href="#">Start
+                                                            free trial</a>
+                                        </p>
+                              </div>
+                    </div>
+          </div>
+</body>
+
+</html>
