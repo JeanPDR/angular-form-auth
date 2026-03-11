@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+          <meta charset="utf-8" />
+          <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+          <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+                    rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+                    rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                    rel="stylesheet" />
+
+          <title>Verify | Go Auth Platform</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+          <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+                    <div class="layout-container flex h-full grow flex-col">
+                              <!-- Navigation Header -->
+                              <header
+                                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 py-4 md:px-40 bg-white dark:bg-background-dark">
+                                        <div class="flex items-center gap-3 text-slate-900 dark:text-slate-100">
+                                                  <div
+                                                            class="flex items-center justify-center size-8 bg-primary/10 rounded-lg">
+                                                            <img src="/img/logo.png" alt="Logo Go Platform">
+                                                  </div>
+                                                  <h2
+                                                            class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">
+                                                            Go Platform</h2>
+                                        </div>
+                                        <button
+                                                  class="flex items-center justify-center overflow-hidden rounded-lg h-10 bg-primary/10 text-primary gap-2 text-sm font-bold px-4 hover:bg-primary/20 transition-colors">
+                                                  <img class="flex items-center justify-center size-8 rounded-lg" src="/img/github-logo.png" alt="Icone Github">
+                                        </button>
+                              </header>
+                              <main class="flex-1 flex items-center justify-center p-4">
+                                        <div
+                                                  class="layout-content-container flex flex-col max-w-[480px] w-full bg-white dark:bg-background-dark/50 p-8 md:p-12 rounded-xl shadow-sm border border-primary/5">
+                                                  <!-- Visual Element -->
+                                                  <div class="flex flex-col items-center mb-8">
+                                                            <div
+                                                                      class="size-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                                                      <img src="/img/logo.png" alt="Logo Go Platform">
+                                                            </div>
+                                                            <h1
+                                                                      class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-bold leading-tight text-center">
+                                                                      Verify Identity</h1>
+                                                            <p
+                                                                      class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed mt-3 text-center">
+                                                                      We've sent a 6-digit verification code to your
+                                                                      email. Please enter it below to secure your
+                                                                      account.
+                                                            </p>
+                                                  </div>
+                                                  <!-- OTP Input Group -->
+                                                  <div class="flex justify-center mb-8">
+                                                            <fieldset class="relative flex gap-2 md:gap-3">
+                                                                      <input class="flex h-14 w-10 md:w-12 text-center rounded-lg border-2 border-primary/10 bg-background-light dark:bg-background-dark/30 text-slate-900 dark:text-slate-100 text-xl font-bold focus:border-primary focus:ring-0 outline-none"
+                                                                                inputmode="numeric" maxlength="1"
+                                                                                pattern="[0-9]*" type="text" value="" />
+                                                                      <input class="flex h-14 w-10 md:w-12 text-center rounded-lg border-2 border-primary/10 bg-background-light dark:bg-background-dark/30 text-slate-900 dark:text-slate-100 text-xl font-bold focus:border-primary focus:ring-0 outline-none"
+                                                                                inputmode="numeric" maxlength="1"
+                                                                                pattern="[0-9]*" type="text" value="" />
+                                                                      <input class="flex h-14 w-10 md:w-12 text-center rounded-lg border-2 border-primary/10 bg-background-light dark:bg-background-dark/30 text-slate-900 dark:text-slate-100 text-xl font-bold focus:border-primary focus:ring-0 outline-none"
+                                                                                inputmode="numeric" maxlength="1"
+                                                                                pattern="[0-9]*" type="text" value="" />
+                                                                      <input class="flex h-14 w-10 md:w-12 text-center rounded-lg border-2 border-primary/10 bg-background-light dark:bg-background-dark/30 text-slate-900 dark:text-slate-100 text-xl font-bold focus:border-primary focus:ring-0 outline-none"
+                                                                                inputmode="numeric" maxlength="1"
+                                                                                pattern="[0-9]*" type="text" value="" />
+                                                                      <input class="flex h-14 w-10 md:w-12 text-center rounded-lg border-2 border-primary/10 bg-background-light dark:bg-background-dark/30 text-slate-900 dark:text-slate-100 text-xl font-bold focus:border-primary focus:ring-0 outline-none"
+                                                                                inputmode="numeric" maxlength="1"
+                                                                                pattern="[0-9]*" type="text" value="" />
+                                                                      <input class="flex h-14 w-10 md:w-12 text-center rounded-lg border-2 border-primary/10 bg-background-light dark:bg-background-dark/30 text-slate-900 dark:text-slate-100 text-xl font-bold focus:border-primary focus:ring-0 outline-none"
+                                                                                inputmode="numeric" maxlength="1"
+                                                                                pattern="[0-9]*" type="text" value="" />
+                                                            </fieldset>
+                                                  </div>
+                                                  <!-- Action Buttons -->
+                                                  <div class="flex flex-col gap-4">
+                                                            <button
+                                                                      class="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all shadow-md active:scale-[0.98]">
+                                                                      Verify Account
+                                                            </button>
+                                                            <div class="flex items-center justify-center gap-2 mt-4">
+                                                                      <span
+                                                                                class="text-slate-500 dark:text-slate-400 text-sm">Didn't
+                                                                                receive the code?</span>
+                                                                      <a class="text-primary hover:text-primary/80 font-semibold text-sm transition-colors decoration-2 underline-offset-4 hover:underline"
+                                                                                href="#">
+                                                                                Resend Code
+                                                                      </a>
+                                                            </div>
+                                                  </div>
+                                                  <!-- Illustration Background Pattern -->
+
+                                        </div>
+                              </main>
+                              <footer class="py-8 text-center border-t border-primary/5">
+                                        <p class="text-slate-400 text-xs">
+                                                  © 2024 Go Platform.
+                                        </p>
+                              </footer>
+                    </div>
+          </div>
+</body>
+
+</html>
