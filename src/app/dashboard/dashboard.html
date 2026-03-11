@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+          <meta charset="utf-8" />
+          <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+          <title>Dashboard | Go Auth Platform</title>
+          <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+                    rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+                    rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                    rel="stylesheet" />
+          <script id="tailwind-config">
+                    tailwind.config = {
+                              darkMode: "class",
+                              theme: {
+                                        extend: {
+                                                  colors: {
+                                                            "primary": "#00abd6",
+                                                            "background-light": "#f5f8f8",
+                                                            "background-dark": "#0f1f23",
+                                                  },
+                                                  fontFamily: {
+                                                            "display": ["Inter", "sans-serif"]
+                                                  },
+                                                  borderRadius: {
+                                                            "DEFAULT": "0.25rem",
+                                                            "lg": "0.5rem",
+                                                            "xl": "0.75rem",
+                                                            "full": "9999px"
+                                                  },
+                                        },
+                              },
+                    }
+          </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+          <div class="flex h-screen overflow-hidden">
+                    <aside
+                              class="w-64 flex-shrink-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+                              <div class="p-6 flex items-center gap-3">
+                                        <div
+                                                  class="bg-primary/10 size-10 rounded-lg flex items-center justify-center text-white">
+                                                  <img src="/img/logo.png" alt="Logo Go Platform">
+                                        </div>
+                                        <div>
+                                                  <h1
+                                                            class="text-slate-900 dark:text-white font-bold text-lg leading-none">
+                                                            Go Platform</h1>
+                                        </div>
+                              </div>
+                              <nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+                                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium"
+                                                  href="/dashboard">
+                                                  <span class="material-symbols-outlined">dashboard</span>
+                                                  Dashboard
+                                        </a>
+                                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                                  href="/dashboard">
+                                                  <span class="material-symbols-outlined">folder</span>
+                                                  Projects
+                                        </a>
+                                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                                  href="/dashboard">
+                                                  <span class="material-symbols-outlined">rocket_launch</span>
+                                                  Deployments
+                                        </a>
+                                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                                  href="/dashboard">
+                                                  <span class="material-symbols-outlined">database</span>
+                                                  Infrastructure
+                                        </a>
+                                        <div
+                                                  class="pt-4 pb-2 px-3 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+                                                  Support</div>
+                                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                                  href="/dashboard">
+                                                  <span class="material-symbols-outlined">description</span>
+                                                  Documentation
+                                        </a>
+                                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                                  href="/dashboard">
+                                                  <span class="material-symbols-outlined">settings</span>
+                                                  Settings
+                                        </a>
+                              </nav>
+                              <div class="p-4 border-t border-slate-200 dark:border-slate-800">
+                                        <button
+                                                  class="w-full py-2.5 px-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+                                                  <span class="material-symbols-outlined text-sm">add</span>
+                                                  New Project
+                                        </button>
+                              </div>
+                    </aside>
+                    <main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+                              <header
+                                        class="h-16 flex-shrink-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 sticky top-0 z-10">
+                                        <div class="flex-1 max-w-xl">
+                                                  <div class="relative group">
+                                                            <span
+                                                                      class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+                                                            <input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary text-sm transition-all placeholder:text-slate-500"
+                                                                      placeholder="Search projects, clusters, or logs..."
+                                                                      type="text" />
+                                                  </div>
+                                        </div>
+                                        <div class="flex items-center gap-4 ml-8">
+                                                  <button
+                                                            class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors relative">
+                                                            <span class="material-symbols-outlined">notifications</span>
+                                                            <span
+                                                                      class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+                                                  </button>
+                                                  <button
+                                                            class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                                                            <span class="material-symbols-outlined">chat_bubble</span>
+                                                  </button>
+                                                  <div class="h-8 w-px bg-slate-200 dark:bg-slate-800 mx-2"></div>
+                                                  <div class="flex items-center gap-3 pl-2">
+                                                            <div class="text-right hidden sm:block">
+                                                                      <p
+                                                                                class="text-sm font-semibold text-slate-900 dark:text-white leading-none">
+                                                                                Alex Rivera</p>
+                                                                      <p class="text-xs text-slate-500 font-medium">Sr.
+                                                                                Engineer</p>
+                                                            </div>
+                                                            <div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden ring-2 ring-primary/20"
+                                                                      data-alt="User profile avatar with professional look"
+                                                                      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZOomCJslLVjt4NGtkk2Qk0gG3Jd74l64tOPMpfR6gGFjnvSJvXUC1vZqzNTUQ5ldZHVQNHSu72G3_Docig1cAS9hWJufvliiUKpnIXibuFXhDE_jEgltz5U_StErDclOYp7g8OpWNBfwTQs1_9f45Te6oNNWHFm1gL0NsJW3xAyLcpR5R7HmKkM5E79Ju_z4Ykm2nb0mQBO_PbIU0cryZbbHvm4DUwysS8b6qfepjCCfVdyPa0hGqBe-DYTsGFw-RvzpDcdxJaweG');">
+                                                            </div>
+                                                  </div>
+                                        </div>
+                              </header>
+                              <div class="p-8">
+                                        <div class="mb-8">
+                                                  <h2
+                                                            class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                                                            Welcome back, Developer</h2>
+                                                  <p class="text-slate-500 dark:text-slate-400 mt-1">Everything is
+                                                            looking good. You have 3 projects ready for deployment.</p>
+                                        </div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                                                  <div
+                                                            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                                            <div class="flex items-center justify-between mb-4">
+                                                                      <span
+                                                                                class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">layers</span>
+                                                                      <span
+                                                                                class="text-emerald-500 text-xs font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded">+2%</span>
+                                                            </div>
+                                                            <p
+                                                                      class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                                                                      Active Projects</p>
+                                                            <p
+                                                                      class="text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                                                                      12</p>
+                                                  </div>
+                                                  <div
+                                                            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                                            <div class="flex items-center justify-between mb-4">
+                                                                      <span
+                                                                                class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">memory</span>
+                                                                      <span
+                                                                                class="text-red-500 text-xs font-bold bg-red-50 dark:bg-red-500/10 px-2 py-1 rounded">-5%</span>
+                                                            </div>
+                                                            <p
+                                                                      class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                                                                      CPU Usage</p>
+                                                            <p
+                                                                      class="text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                                                                      42%</p>
+                                                  </div>
+                                                  <div
+                                                            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                                            <div class="flex items-center justify-between mb-4">
+                                                                      <span
+                                                                                class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">send</span>
+                                                                      <span
+                                                                                class="text-emerald-500 text-xs font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded">+12%</span>
+                                                            </div>
+                                                            <p
+                                                                      class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                                                                      Total Deployments</p>
+                                                            <p
+                                                                      class="text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                                                                      843</p>
+                                                  </div>
+                                                  <div
+                                                            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                                            <div class="flex items-center justify-between mb-4">
+                                                                      <span
+                                                                                class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">speed</span>
+                                                                      <span
+                                                                                class="text-emerald-500 text-xs font-bold bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded">Stable</span>
+                                                            </div>
+                                                            <p
+                                                                      class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                                                                      System Uptime</p>
+                                                            <p
+                                                                      class="text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                                                                      99.9%</p>
+                                                  </div>
+                                        </div>
+                                        <div
+                                                  class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm mb-8 overflow-hidden">
+                                                  <div
+                                                            class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                                                            <div>
+                                                                      <h3
+                                                                                class="text-lg font-bold text-slate-900 dark:text-white">
+                                                                                Deployment Activity</h3>
+                                                                      <p class="text-sm text-slate-500">Weekly
+                                                                                throughput trend</p>
+                                                            </div>
+                                                            <div class="flex gap-2">
+                                                                      <button
+                                                                                class="px-3 py-1.5 text-xs font-semibold bg-primary text-white rounded">Last
+                                                                                7 Days</button>
+                                                                      <button
+                                                                                class="px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">Monthly</button>
+                                                            </div>
+                                                  </div>
+                                                  <div class="p-6">
+                                                            <div class="h-64 relative">
+                                                                      <svg class="w-full h-full"
+                                                                                preserveaspectratio="none"
+                                                                                viewbox="0 0 800 240">
+                                                                                <defs>
+                                                                                          <lineargradient
+                                                                                                    id="chartGradient"
+                                                                                                    x1="0" x2="0" y1="0"
+                                                                                                    y2="1">
+                                                                                                    <stop offset="0%"
+                                                                                                              stop-color="#00abd6"
+                                                                                                              stop-opacity="0.3">
+                                                                                                    </stop>
+                                                                                                    <stop offset="100%"
+                                                                                                              stop-color="#00abd6"
+                                                                                                              stop-opacity="0">
+                                                                                                    </stop>
+                                                                                          </lineargradient>
+                                                                                </defs>
+                                                                                <path d="M0,180 Q100,160 200,190 T400,140 T600,170 T800,100 L800,240 L0,240 Z"
+                                                                                          fill="url(#chartGradient)">
+                                                                                </path>
+                                                                                <path d="M0,180 Q100,160 200,190 T400,140 T600,170 T800,100"
+                                                                                          fill="none" stroke="#00abd6"
+                                                                                          stroke-linecap="round"
+                                                                                          stroke-width="3"></path>
+                                                                      </svg>
+                                                                      <div
+                                                                                class="absolute bottom-0 w-full flex justify-between px-2 pt-4">
+                                                                                <span
+                                                                                          class="text-xs font-bold text-slate-400 uppercase">Mon</span>
+                                                                                <span
+                                                                                          class="text-xs font-bold text-slate-400 uppercase">Tue</span>
+                                                                                <span
+                                                                                          class="text-xs font-bold text-slate-400 uppercase">Wed</span>
+                                                                                <span
+                                                                                          class="text-xs font-bold text-slate-400 uppercase">Thu</span>
+                                                                                <span
+                                                                                          class="text-xs font-bold text-slate-400 uppercase">Fri</span>
+                                                                                <span
+                                                                                          class="text-xs font-bold text-slate-400 uppercase">Sat</span>
+                                                                                <span
+                                                                                          class="text-xs font-bold text-slate-400 uppercase">Sun</span>
+                                                                      </div>
+                                                            </div>
+                                                  </div>
+                                        </div>
+                                        <div
+                                                  class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                                                  <div class="p-6 border-b border-slate-100 dark:border-slate-800">
+                                                            <h3
+                                                                      class="text-lg font-bold text-slate-900 dark:text-white">
+                                                                      Recent Projects</h3>
+                                                  </div>
+                                                  <div class="overflow-x-auto">
+                                                            <table class="w-full text-left">
+                                                                      <thead>
+                                                                                <tr
+                                                                                          class="bg-slate-50 dark:bg-slate-800/50">
+                                                                                          <th
+                                                                                                    class="px-6 py-3 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                                                                                    Project Name</th>
+                                                                                          <th
+                                                                                                    class="px-6 py-3 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                                                                                    Status</th>
+                                                                                          <th
+                                                                                                    class="px-6 py-3 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                                                                                    Last Commit</th>
+                                                                                          <th
+                                                                                                    class="px-6 py-3 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">
+                                                                                                    Actions</th>
+                                                                                </tr>
+                                                                      </thead>
+                                                                      <tbody
+                                                                                class="divide-y divide-slate-100 dark:divide-slate-800">
+                                                                                <tr>
+                                                                                          <td class="px-6 py-4">
+                                                                                                    <div
+                                                                                                              class="flex items-center gap-3">
+                                                                                                              <div
+                                                                                                                        class="size-8 rounded bg-primary/20 flex items-center justify-center text-primary">
+                                                                                                                        <span
+                                                                                                                                  class="material-symbols-outlined text-sm">api</span>
+                                                                                                              </div>
+                                                                                                              <span
+                                                                                                                        class="font-semibold text-slate-900 dark:text-white">Auth
+                                                                                                                        Service
+                                                                                                                        API</span>
+                                                                                                    </div>
+                                                                                          </td>
+                                                                                          <td class="px-6 py-4">
+                                                                                                    <span
+                                                                                                              class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                                                                                                              <span
+                                                                                                                        class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                                                                                              Healthy
+                                                                                                    </span>
+                                                                                          </td>
+                                                                                          <td
+                                                                                                    class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 font-mono">
+                                                                                                    7e8f2c9 · 12 mins
+                                                                                                    ago
+                                                                                          </td>
+                                                                                          <td
+                                                                                                    class="px-6 py-4 text-right">
+                                                                                                    <button
+                                                                                                              class="text-slate-400 hover:text-primary transition-colors">
+                                                                                                              <span
+                                                                                                                        class="material-symbols-outlined">more_vert</span>
+                                                                                                    </button>
+                                                                                          </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                          <td class="px-6 py-4">
+                                                                                                    <div
+                                                                                                              class="flex items-center gap-3">
+                                                                                                              <div
+                                                                                                                        class="size-8 rounded bg-primary/20 flex items-center justify-center text-primary">
+                                                                                                                        <span
+                                                                                                                                  class="material-symbols-outlined text-sm">web</span>
+                                                                                                              </div>
+                                                                                                              <span
+                                                                                                                        class="font-semibold text-slate-900 dark:text-white">Marketing
+                                                                                                                        Landing</span>
+                                                                                                    </div>
+                                                                                          </td>
+                                                                                          <td class="px-6 py-4">
+                                                                                                    <span
+                                                                                                              class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                                                                                                              <span
+                                                                                                                        class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                                                                                              Deploying
+                                                                                                    </span>
+                                                                                          </td>
+                                                                                          <td
+                                                                                                    class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 font-mono">
+                                                                                                    a1b2c3d · 2 hours
+                                                                                                    ago
+                                                                                          </td>
+                                                                                          <td
+                                                                                                    class="px-6 py-4 text-right">
+                                                                                                    <button
+                                                                                                              class="text-slate-400 hover:text-primary transition-colors">
+                                                                                                              <span
+                                                                                                                        class="material-symbols-outlined">more_vert</span>
+                                                                                                    </button>
+                                                                                          </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                          <td class="px-6 py-4">
+                                                                                                    <div
+                                                                                                              class="flex items-center gap-3">
+                                                                                                              <div
+                                                                                                                        class="size-8 rounded bg-primary/20 flex items-center justify-center text-primary">
+                                                                                                                        <span
+                                                                                                                                  class="material-symbols-outlined text-sm">database</span>
+                                                                                                              </div>
+                                                                                                              <span
+                                                                                                                        class="font-semibold text-slate-900 dark:text-white">User
+                                                                                                                        Analytics
+                                                                                                                        DB</span>
+                                                                                                    </div>
+                                                                                          </td>
+                                                                                          <td class="px-6 py-4">
+                                                                                                    <span
+                                                                                                              class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                                                                                                              <span
+                                                                                                                        class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                                                                                              Healthy
+                                                                                                    </span>
+                                                                                          </td>
+                                                                                          <td
+                                                                                                    class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 font-mono">
+                                                                                                    9f0e1d2 · yesterday
+                                                                                          </td>
+                                                                                          <td
+                                                                                                    class="px-6 py-4 text-right">
+                                                                                                    <button
+                                                                                                              class="text-slate-400 hover:text-primary transition-colors">
+                                                                                                              <span
+                                                                                                                        class="material-symbols-outlined">more_vert</span>
+                                                                                                    </button>
+                                                                                          </td>
+                                                                                </tr>
+                                                                      </tbody>
+                                                            </table>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </main>
+          </div>
+</body>
+
+</html>

@@ -4,6 +4,7 @@ import { Register } from "./auth/register/register";
 import { CodeVerification } from "./auth/code-verification/code-verification";
 import { SetPassword } from "./auth/set-password/set-password";
 import { ResetPassword } from "./auth/reset-password/reset-password";
+import { Dashboard } from "./dashboard/dashboard";
 
 export const routes: Routes = [
   {
@@ -14,6 +15,7 @@ export const routes: Routes = [
       { path: 'verify', component: CodeVerification},
       { path: 'set-password', component: SetPassword},
       { path: 'reset-password', component: ResetPassword},
+      { path: 'dashboard', component: Dashboard},
       // { path: '', redirectTo: 'login', pathMatch: 'full' } 
     ]
   }
