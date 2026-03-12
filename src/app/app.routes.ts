@@ -6,17 +6,22 @@ import { SetPassword } from "./auth/set-password/set-password";
 import { ResetPassword } from "./auth/reset-password/reset-password";
 import { Dashboard } from "./dashboard/dashboard";
 
+import { guestGuard } from "./auth/guards/guest.guard";
+import { authGuard } from "./auth/guards/auth.guard";
+
 export const routes: Routes = [
   {
     path: '', 
     children: [
-      { path: 'login', component: Login },
-      { path: 'register', component: Register},
-      { path: 'verify', component: CodeVerification},
-      { path: 'set-password', component: SetPassword},
-      { path: 'reset-password', component: ResetPassword},
-      { path: 'dashboard', component: Dashboard},
-      // { path: '', redirectTo: 'login', pathMatch: 'full' } 
+      { path: 'login', component: Login, canActivate: [guestGuard] },
+      { path: 'register', component: Register, canActivate: [guestGuard] },
+      { path: 'verify', component: CodeVerification, canActivate: [guestGuard] },
+      { path: 'set-password', component: SetPassword, canActivate: [guestGuard] },
+      { path: 'reset-password', component: ResetPassword, canActivate: [guestGuard] },
+      
+      { path: 'dashboard', component: Dashboard, canActivate: [authGuard] },
+      
+      { path: '', redirectTo: 'login', pathMatch: 'full' } 
     ]
   }
 ];
