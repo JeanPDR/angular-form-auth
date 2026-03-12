@@ -22,6 +22,10 @@ export class AuthService {
     this.isLoggedIn.set(status);
   }
 
+  logout() {
+    return this.http.post(`${this.apiUrl}/logout`, {}, { withCredentials: true });
+  }
+
   validateSession() {
     return this.http.get(`${this.apiUrl}/me`, { withCredentials: true }).pipe(
       map(() => {
