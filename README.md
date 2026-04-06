@@ -1,59 +1,50 @@
-# GoPlatformAuth
+# Go Platform Auth - Frontend Client
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+Uma interface de usuário moderna e responsiva para gestão de identidade, construída para se integrar perfeitamente e consumir a API de autenticação desenvolvida em Go (Golang). Este projeto gerencia todo o fluxo de acesso do usuário, desde a criação da conta até a recuperação e verificação de credenciais.
 
-## Development server
+## 🚀 Tecnologias Utilizadas
 
-To start a local development server, run:
+* **[Angular 20](https://angular.dev/)**: Framework principal da aplicação, utilizando as versões mais recentes do core e roteamento.
+* **[Tailwind CSS v4](https://tailwindcss.com/)**: Framework utilitário configurado para a estilização ágil e design responsivo.
+* **[Lucide Angular](https://lucide.dev/)**: Biblioteca escolhida para fornecer ícones consistentes e elegantes na interface.
+* **TypeScript**: Linguagem base que garante tipagem estática e maior segurança no desenvolvimento.
 
-```bash
-ng serve
-```
+## ✨ Funcionalidades (Fluxo de Autenticação)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+O sistema conta com um roteamento completo para gestão de acesso, rigorosamente protegido por Guards de navegação:
 
-## Code scaffolding
+* **Login & Registro**: Telas de acesso e criação de novas contas (`/login`, `/register`).
+* **Verificação de Código**: Confirmação de identidade ou ativação de conta através de códigos (`/verify`).
+* **Gestão de Senha**: Fluxos para definição inicial de senha e redefinição em caso de esquecimento (`/set-password`, `/reset-password`).
+* **Dashboard Protegida**: Área logada exclusiva para usuários já autenticados (`/dashboard`).
+* **Controle de Acesso**: Utilização de `authGuard` para bloquear áreas restritas e `guestGuard` para impedir que usuários logados acessem novamente as telas de login.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Pré-requisitos
 
-```bash
-ng generate component component-name
-```
+Antes de começar, você precisará ter instalado em sua máquina:
+* [Node.js](https://nodejs.org/)
+* [Angular CLI](https://angular.dev/tools/cli)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Como executar o projeto
 
-```bash
-ng generate --help
-```
+1. Clone o repositório para sua máquina local.
+2. Acesse a pasta do projeto e instale as dependências:
+   ```bash
+   npm install
+3. Inicie o servidor de desenvolvimento local:
+    ```bash
+   npm run start
+O aplicativo estará disponível no seu navegador em http://localhost:4200/. A aplicação recarregará automaticamente se você alterar qualquer um dos arquivos de código-fonte.
+##🏗️ Estrutura de Scripts Úteis
+Conforme configurado no projeto, os seguintes atalhos estão disponíveis via NPM:
 
-## Building
+npm run start: Inicia a aplicação no servidor de desenvolvimento.
 
-To build the project run:
+npm run build: Compila o projeto otimizado para o ambiente de produção (ng build).
 
-```bash
-ng build
-```
+npm run watch: Compila o projeto em modo de observação contínua para desenvolvimento.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+npm run test: Executa a suíte de testes unitários (ng test).
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+👤 Autor
+Jean Pereira dos Reis
